@@ -1,17 +1,28 @@
 package com.example.carfax.Models;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+@Entity(tableName = "vehicle_details_table")
+
 public class VehicleListing {
 
-    @SerializedName("dealer")
-    @Expose
-    private VehicleDealer vehicleDealer;
-
+    @PrimaryKey
+    @NonNull
     @SerializedName("vin")
     @Expose
     private String vin;
+
+    @SerializedName("dealer")
+    @Expose
+    @Embedded
+    private VehicleDealer vehicleDealer;
 
     @SerializedName("year")
     @Expose
@@ -33,10 +44,12 @@ public class VehicleListing {
     @Expose
     private Integer mileage;
 
+    @ColumnInfo(name = "current_price")
     @SerializedName("currentPrice")
     @Expose
     private Double currentPrice;
 
+    @ColumnInfo(name = "exterior_color")
     @SerializedName("exteriorColor")
     @Expose
     private String exteriorColor;
@@ -67,6 +80,7 @@ public class VehicleListing {
 
     @SerializedName("images")
     @Expose
+    @Embedded
     private VehicleImage images;
 
     public VehicleDealer getVehicleDealer() {
@@ -117,7 +131,7 @@ public class VehicleListing {
         this.trim = trim;
     }
 
-    public Integer getMilage() {
+    public Integer getMileage() {
         return mileage;
     }
 
@@ -197,3 +211,4 @@ public class VehicleListing {
         this.images = images;
     }
 }
+

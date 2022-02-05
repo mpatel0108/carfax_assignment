@@ -1,11 +1,20 @@
 package com.example.carfax.Services;
 
+import com.example.carfax.Interfaces.IVehicleService;
 import com.example.carfax.Models.VehicleResponse;
 
-import retrofit2.Call;
-import retrofit2.http.GET;
+import javax.inject.Inject;
 
-public interface VehicleService {
-    @GET("/assignment.json")
-    Call<VehicleResponse> getVehicleDetails();
+import rx.Observable;
+
+public class VehicleService implements IVehicleService {
+
+    @Inject
+    public VehicleService() {
+    }
+
+    @Override
+    public Observable<VehicleResponse> getVehicleDetails() {
+        return null;
+    }
 }
