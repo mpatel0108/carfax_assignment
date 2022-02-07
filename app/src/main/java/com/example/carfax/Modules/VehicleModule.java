@@ -19,7 +19,7 @@ import dagger.Provides;
 
 @Module
 public class VehicleModule {
-    private Context context;
+    private final Context context;
 
     public VehicleModule(Context context) {
         this.context = context;

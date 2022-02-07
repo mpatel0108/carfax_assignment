@@ -43,6 +43,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        if(isNetworkAvailable()==false){
+            showAlertAndExit();
+        }
+
         vehicleInfoRecyclerView = (RecyclerView) findViewById(R.id.vehicle_info_recycler_view);
         layoutManager = new LinearLayoutManager(this);
         vehicleInfoRecyclerView.setLayoutManager(layoutManager);
