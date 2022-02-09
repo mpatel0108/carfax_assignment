@@ -76,8 +76,8 @@ public class VehicleRepository {
                             Log.d("404", "Internet not available");
                             //Internet Connection is not available.
                         } else {
-                            //Unknown error occured.
-                            Log.d("401", "Unknown error occured");
+                            //Unknown error occurred.
+                            Log.d("401", "Unknown error occurred");
                         }
                     }
 

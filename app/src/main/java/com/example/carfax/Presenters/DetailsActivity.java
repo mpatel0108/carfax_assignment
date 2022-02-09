@@ -118,7 +118,7 @@ public class DetailsActivity extends AppCompatActivity {
             //Permission Not granted Request Permission
             ActivityCompat.requestPermissions(DetailsActivity.this, new String[]{Manifest.permission.CALL_PHONE}, CALL);
         } else {
-            // Permission has already been granted
+            //Permission has already been granted
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:" + phoneNumber));
             if (callIntent.resolveActivity(this.getPackageManager()) != null) {

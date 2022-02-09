@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
     private static Retrofit retrofit = null;
-    private static String BASE_URL = "https://carfax-for-consumers.firebaseio.com/";
+    private static final String BASE_URL = "https://carfax-for-consumers.firebaseio.com/";
 
     public static Retrofit getClient() {
         if (retrofit == null) {
